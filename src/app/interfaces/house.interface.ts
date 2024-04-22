@@ -7,6 +7,5 @@ export interface House {
   price: string;
   address: string;
   thumbnail: string;
-  floorPlan: string; // URL to the SVG floorplan
   rooms: Room[];
 }

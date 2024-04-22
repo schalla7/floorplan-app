@@ -1,1 +1,7 @@
-<p>room-detail works!</p>
+<div *ngIf="room">
+  <h2>{{ room.name }}</h2>
+  <p>{{ room.description }}</p>
+  <div class="photos">
+    <img *ngFor="let photo of photos" [src]="photo" loading="lazy" alt="{{ room.name }}">
+  </div>
+</div>

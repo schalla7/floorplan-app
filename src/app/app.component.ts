@@ -1,19 +1,35 @@
+// app.component.ts
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HouseComponent } from './components/house/house.component';
+import { Room } from './interfaces/room.interface';
+import { RoomService } from './services/room.service';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,  //  <-- TODO: might not need this, remove?
-    HouseComponent
-  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  imports: [
+    NgIf,
+    NgFor,
+  ]
 })
 export class AppComponent {
-  title = 'floorplan-app';
+  selectedRoom: Room | null = null;
+
+  constructor(private roomService: RoomService) {}
+
+  onSvgLoad() {
+    const svgElement = (document.getElementById('floorplan') as HTMLObjectElement).contentDocument;
+    if (svgElement) {
+      svgElement.querySelectorAll('path').forEach(path => {
+        path.addEventListener('click', () => {
+          const room = this.roomService.getRoomById(path.id);
+          if (room) {
+            this.selectedRoom = room;
+          }
+        });
+      });
+    }
+  }
 }

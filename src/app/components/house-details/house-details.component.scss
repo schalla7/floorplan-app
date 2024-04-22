@@ -1,0 +1,16 @@
+.house-intro {
+    display: flex;
+    align-items: center;
+    gap: 20px; // Adjust space between image and details
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        flex-direction: column; // Stack vertically on smaller screens
+    }
+}
+
+.house-thumbnail {
+    width: 200px; // Fixed width or use percentage
+    height: auto; // Maintain aspect ratio
+    border-radius: 10px; // Optional, for rounded corners
+}

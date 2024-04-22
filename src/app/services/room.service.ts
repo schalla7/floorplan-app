@@ -31,7 +31,7 @@ export class RoomService {
     },
     {
       id: 'patio',
-      name: 'patio',
+      name: 'Patio',
       description: 'First floor patio with view lawns, pond, and beyond.',
       photos: [
         'assets/rooms/patio/patio_1.jpg',
@@ -57,7 +57,7 @@ export class RoomService {
     },
     {
       id: 'kitchen',
-      name: 'kitchen / Entry',
+      name: 'Kitchen / Entry',
       description: 'Modern kitchen adjacent to living room.',
       photos: [
         'assets/rooms/kitchen/kitchen_1.jpg',

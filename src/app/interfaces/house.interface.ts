@@ -7,5 +7,4 @@ export interface House {
   price: string;
   address: string;
   thumbnail: string;
-  rooms: Room[];
 }

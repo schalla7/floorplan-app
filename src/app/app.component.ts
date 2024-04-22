@@ -2,9 +2,9 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Room } from './interfaces/room.interface';
 import { NgFor, NgIf } from '@angular/common';
-import { HouseDetailsComponent } from './components/house-details/house-details.component';
 import { RoomDetailComponent } from './components/room-detail/room-detail.component';
 import { RoomService } from './services/room.service';
+import { HouseDetailsComponent } from './components/house-details/house-details.component';
 
 @Component({
   selector: 'app-root',
@@ -33,9 +33,7 @@ export class AppComponent {
       svgElement.querySelectorAll('path').forEach(path => {
         path.addEventListener('click', () => {
           const room = this.roomService.getRoomById(path.id);
-          // console.log(`In app component, in click listener in SVG, click found in room: [${room?.name}]`);
           if (room != null) {
-            // this.selectedRoomName = room.name;
             this.selectedRoom = room;
             this.cdr.detectChanges();  // Manually trigger change detection
           }

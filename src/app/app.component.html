@@ -1,16 +1,9 @@
-<!-- app.component.html -->
 <div class="content">
 
-  <div class="floorplan">
-    <object data="assets/floorplan1.svg" type="image/svg+xml" id="floorplan" (load)="onSvgLoad()"></object>
-  </div>
+    <house-details></house-details>
 
-  <div *ngIf="selectedRoom">
-    <h2>{{ selectedRoom.name }}</h2>
-    <p>{{ selectedRoom.description }}</p>
-    <div class="room-photos">
-      <img *ngFor="let photo of selectedRoom?.photos" [src]="photo" alt="{{ selectedRoom.name }}">
-    </div>
-  </div>
+    <floorplan></floorplan>
+
+    <room-detail></room-detail>
 
 </div>

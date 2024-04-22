@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { Room } from './interfaces/room.interface';
 import { RoomService } from './services/room.service';
 import { NgFor, NgIf } from '@angular/common';
+import { HouseDetailsComponent } from './components/house-details/house-details.component';
+import { FloorplanComponent } from './components/floorplan/floorplan.component';
+import { RoomDetailComponent } from './components/room-detail/room-detail.component';
 
 @Component({
   selector: 'app-root',
@@ -12,24 +15,11 @@ import { NgFor, NgIf } from '@angular/common';
   imports: [
     NgIf,
     NgFor,
+    HouseDetailsComponent,
+    FloorplanComponent,
+    RoomDetailComponent
   ]
 })
 export class AppComponent {
-  selectedRoom: Room | null = null;
-
-  constructor(private roomService: RoomService) {}
-
-  onSvgLoad() {
-    const svgElement = (document.getElementById('floorplan') as HTMLObjectElement).contentDocument;
-    if (svgElement) {
-      svgElement.querySelectorAll('path').forEach(path => {
-        path.addEventListener('click', () => {
-          const room = this.roomService.getRoomById(path.id);
-          if (room) {
-            this.selectedRoom = room;
-          }
-        });
-      });
-    }
-  }
+  
 }

@@ -1,6 +1,7 @@
 // room.service.ts
 import { Injectable } from '@angular/core';
 import { Room } from '../interfaces/room.interface';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -68,7 +69,15 @@ export class RoomService {
 
   getRoomById(id: string): Room | null {
     const room = this.rooms.find(room => room.id === id);
+    console.log("\nClicked on room:");
+    console.log(room);
     return room ?? null;;
   }
   
+  private selectedRoomSource = new BehaviorSubject<Room | null>(null);
+  selectedRoom$ = this.selectedRoomSource.asObservable();
+
+  setSelectedRoom(room: Room) {
+    this.selectedRoomSource.next(room);
+  }
 }

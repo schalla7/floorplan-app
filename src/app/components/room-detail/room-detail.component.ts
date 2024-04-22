@@ -1,7 +1,5 @@
-import { Component} from '@angular/core';
-import { Room } from '../../interfaces/room.interface';
+import { ChangeDetectorRef, Component, Input, SimpleChanges} from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
-import { RoomService } from '../../services/room.service';
 
 
 @Component({
@@ -12,14 +10,15 @@ import { RoomService } from '../../services/room.service';
   styleUrl: './room-detail.component.scss'
 })
 export class RoomDetailComponent {
-  selectedRoom: Room | null = null;
+  @Input() roomName: string | null = null;
 
-  constructor(private roomService: RoomService) {}
+  constructor(private cd: ChangeDetectorRef) {}
 
-  ngOnInit() {
-    this.roomService.selectedRoom$.subscribe(room => {
-      this.selectedRoom = room;
-      console.log(`In RoomDetailComponent, selectedRoom has been updated to: [${this.selectedRoom?.name}]`);
-    });
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['roomName']) {
+      console.log(`In RoomDetailComponent, roomName has been updated to: [${this.roomName}]`);
+      this.cd.detectChanges();
+    }
   }
 }

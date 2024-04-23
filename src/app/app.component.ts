@@ -26,21 +26,32 @@ export class AppComponent {
 
   constructor(
     private roomService: RoomService,
-    private cdr: ChangeDetectorRef  // Inject ChangeDetectorRef
+    private cdr: ChangeDetectorRef  
   ) { }
   
   onSvgLoad() {
     const svgElement = (document.getElementById('floorplan') as HTMLObjectElement).contentDocument;
     if (svgElement) {
-      svgElement.querySelectorAll('path').forEach(path => {
+      const paths = svgElement.querySelectorAll('path');
+      paths.forEach(path => {
         path.addEventListener('click', () => {
           const room = this.roomService.getRoomById(path.id);
           if (room != null) {
             this.selectedRoom = room;
-            this.cdr.detectChanges();  // Manually tell Angular to trigger change detection
+            this.cdr.detectChanges(); // Manually trigger change detection
+
+            // Reset styles for all paths
+            svgElement.querySelectorAll('path').forEach(p => {
+              p.style.stroke = '';
+              p.style.strokeWidth = '';
+            });
+            // Apply styles directly to the clicked path
+            path.style.stroke = "#ff0000";
+            path.style.strokeWidth = "4px";
           }
         });
       });
     }
   }
+
 }

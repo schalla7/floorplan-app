@@ -4,13 +4,11 @@
 
 .floorplan {
     object {
-        // aspect-ratio: 4 /  3;
-        // aspect-ratio: 4 / 3; // This keeps the floorplan's aspect ratio constant
-        // max-height: 35h; // Adjust based on your preference
         overflow: auto;
     }
 }
 
+// Big Screens:
 @media (min-width: 768px) {
     .mainblock {
         display: flex;
@@ -18,14 +16,9 @@
         flex-direction: row;
     }
         .floorplan {
-            // flex-basis: 35%;
             padding: 30px;
             min-width: 29%;
             flex-grow: 0; // Prevents the floorplan from growing
-            // flex-shrink: 0; // Allows the floorplan to shrink if necessary
-            // margin-right: auto; // Aligns the floorplan to the left by pushing it away from the right
-            // margin-left: 0; // Keeps the floorplan flush with the left edge
-            // width: 35%;
         }
         .room-detail {
             flex-grow: 1; // Will grow to fill the remaining space
@@ -34,6 +27,7 @@
         }
 }
 
+// Mobile screens:
 @media (max-width: 768px) {
     .mainblock {
         width: 85%;

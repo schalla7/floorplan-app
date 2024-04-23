@@ -6,13 +6,6 @@
         <object data="assets/floorplan1.svg" type="image/svg+xml" id="floorplan" (load)="onSvgLoad()"></object>
     </div>
 
-    <div *ngIf="selectedRoom">
-        <h2>{{ selectedRoom.name }}</h2>
-        <p>{{ selectedRoom.description }}</p>
-
-        <div class="room-photos">
-            <img *ngFor="let photo of selectedRoom.photos" [src]="photo" alt="{{ selectedRoom.name }}">
-        </div>
-    </div>
+    <room-detail [room]="selectedRoom"></room-detail>
 
 </div>

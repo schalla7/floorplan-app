@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, Input, SimpleChanges} from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
+import { Room } from '../../interfaces/room.interface';
 
 
 @Component({
@@ -10,15 +11,6 @@ import { NgIf, NgFor } from '@angular/common';
   styleUrl: './room-detail.component.scss'
 })
 export class RoomDetailComponent {
-  @Input() roomName: string | null = null;
+  @Input() room?: Room | null;
 
-  constructor(private cd: ChangeDetectorRef) {}
-
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['roomName']) {
-      console.log(`In RoomDetailComponent, roomName has been updated to: [${this.roomName}]`);
-      this.cd.detectChanges();
-    }
-  }
 }

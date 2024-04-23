@@ -1,2 +1,24 @@
+/* Global styles for the entire app */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif; // Example font
+    overflow-x: hidden;
+}
 
+/* Global responsive padding */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box; // Ensures padding does not add to width
 
+    @media (max-width: 768px) {
+        padding: 0 20px; // Adds padding on smaller screens
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

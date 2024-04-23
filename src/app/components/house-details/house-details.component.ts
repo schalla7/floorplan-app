@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { House } from '../../interfaces/house.interface';
 
 @Component({
@@ -9,11 +9,12 @@ import { House } from '../../interfaces/house.interface';
   styleUrl: './house-details.component.scss'
 })
 export class HouseDetailsComponent {
-  houseDetails: House = {
-    title: '',
-    description: '',
-    price: '',
-    address: '',
-    thumbnail: '',
+  public house: House = {
+    title: "Selling my Dutch Dream House!",
+    description: "Nice, spacious one-bedroom apartment with patio overlooking the Somewhere Dam and Somewhere Park",
+    price: "$ 1000.00",
+    address: "27 Somewhere Street, Leiden, Netherlands",
+    thumbnail: "assets/rooms/patio/patio_2.jpg",
   };
+  
 }

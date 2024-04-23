@@ -1,9 +1,10 @@
 <div class="house-intro">
-    <img src="assets/rooms/patio/patio_2.jpg" alt="Thumbnail of the house" class="house-thumbnail">
+    <img [src]="house.thumbnail" alt="Thumbnail of the house" class="house-thumbnail">
     <div class="house-details">
-        <h1>Charming Dutch Apartment For Sale</h1>
-        <p class="description">A beautiful 1-bedroom apartment with balcony and view.</p>
-        <p class="price">Price: 350,000 Euro</p>
-        <p class="address">1234 Countryside Lane, Leiden, Netherlands</p>
+        <h1>{{ house.title }}</h1>
+        <p class="description">{{ house.description }}</p>
+        <p class="price">Price: {{ house.price }}</p>
+        <p class="address">{{ house.address }}</p>
+        <p class="instruction">Use the map below to show room photos!</p>
     </div>
 </div>

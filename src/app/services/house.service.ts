@@ -30,12 +30,11 @@ export class HouseService {
   */
 
   private house: House = {
-    title: "Selling my Dutch Dream House!",
+    title: "Quaint 1-Bedroom Apartment With View",
     description: "Nice, spacious one-bedroom apartment with patio overlooking the Somewhere Dam and Somewhere Park",
     price: "$ 1000.00",
     address: "27 Somewhere Street, Leiden, Netherlands",
     thumbnail: "assets/estate_arrival.jpg",
-    rooms: []
   };
 
   constructor() { }

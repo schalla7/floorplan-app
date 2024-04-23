@@ -1,14 +1,3 @@
-.content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
-
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-    }
-}
-
 .floorplan {
     object {
         width: 100%;
@@ -18,13 +7,24 @@
     }
 }
 
-.room-photos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
+.full-width-test {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 50px; // Or any fixed height you want
+    margin: 0;
+    padding: 0;
+}
 
-    img {
-        width: 100%;
-        height: auto;
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 0 20px; // Add padding on mobile for some space around the edges
     }
 }

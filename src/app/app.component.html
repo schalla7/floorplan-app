@@ -2,10 +2,13 @@
 
     <house-details></house-details>
 
-    <div class="floorplan">
-        <object data="assets/floorplan1.svg" type="image/svg+xml" id="floorplan" (load)="onSvgLoad()"></object>
-    </div>
+    <div class="mainblock">
+        <div class="floorplan">
+            <object data="assets/floorplan1.svg" type="image/svg+xml" id="floorplan" (load)="onSvgLoad()"></object>
+        </div>
 
-    <room-detail [room]="selectedRoom"></room-detail>
+        <room-detail [room]="selectedRoom"></room-detail>
+
+    </div>
 
 </div>

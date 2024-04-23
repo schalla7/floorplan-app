@@ -57,7 +57,7 @@ export class RoomService {
     },
     {
       id: 'kitchen',
-      name: 'Kitchen / Entry',
+      name: 'Kitchen',
       description: 'Modern kitchen adjacent to living room.',
       photos: [
         'assets/rooms/kitchen/kitchen_1.jpg',
@@ -69,8 +69,6 @@ export class RoomService {
 
   getRoomById(id: string): Room | null {
     const room = this.rooms.find(room => room.id === id);
-    // console.log("\nClicked on room:");
-    // console.log(room);
     return room ?? null;
   }
   

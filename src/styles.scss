@@ -15,10 +15,6 @@ html {
     align-items: center;
     width: 100%;
     box-sizing: border-box; // Ensures padding does not add to width
-
-    @media (max-width: 768px) {
-        padding: 0 20px; // Adds padding on smaller screens
-    }
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

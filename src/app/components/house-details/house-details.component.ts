@@ -10,7 +10,7 @@ import { House } from '../../interfaces/house.interface';
 })
 export class HouseDetailsComponent {
   public house: House = {
-    title: "Selling my Dutch Dream House!",
+    title: "Selling The Dutch Dream House!",
     description: "Nice, spacious one-bedroom apartment with patio overlooking the Somewhere Dam and Somewhere Park",
     price: "$ 1000.00",
     address: "27 Somewhere Street, Leiden, Netherlands",

@@ -2,5 +2,10 @@
 <p>{{ room?.description }}</p>
 
 <div class="room-photos">
-    <img loading="lazy" *ngFor="let photo of room?.photos" [src]="photo" alt="{{ room?.name }}">
+    <img 
+        *ngFor="let photo of room?.photos" 
+        [src]="photo"
+        loading="lazy"
+        alt="{{ room?.name }}"
+    >
 </div>

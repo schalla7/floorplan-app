@@ -1,30 +1,44 @@
+.mainblock {
+    width: 100%;
+}
+
 .floorplan {
     object {
-        width: 100%;
-        aspect-ratio: 4 / 3; // This keeps the floorplan's aspect ratio constant
-        max-height: 50vh; // Adjust based on your preference
+        // aspect-ratio: 4 /  3;
+        // aspect-ratio: 4 / 3; // This keeps the floorplan's aspect ratio constant
+        // max-height: 35h; // Adjust based on your preference
         overflow: auto;
     }
 }
 
-.full-width-test {
-    background-color: #f0f0f0;
-    width: 100%;
-    height: 50px; // Or any fixed height you want
-    margin: 0;
-    padding: 0;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
+@media (min-width: 768px) {
+    .mainblock {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+    }
+        .floorplan {
+            // flex-basis: 35%;
+            padding: 30px;
+            min-width: 29%;
+            flex-grow: 0; // Prevents the floorplan from growing
+            // flex-shrink: 0; // Allows the floorplan to shrink if necessary
+            // margin-right: auto; // Aligns the floorplan to the left by pushing it away from the right
+            // margin-left: 0; // Keeps the floorplan flush with the left edge
+            // width: 35%;
+        }
+        .room-detail {
+            flex-grow: 1; // Will grow to fill the remaining space
+            flex-shrink: 1; // Allows shrinking if necessary
+            flex-basis: 65%;
+        }
 }
 
 @media (max-width: 768px) {
-    .content {
-        padding: 0 20px; // Add padding on mobile for some space around the edges
+    .mainblock {
+        width: 85%;
+    }
+    .floorplan {
+        width: 100%;
     }
 }

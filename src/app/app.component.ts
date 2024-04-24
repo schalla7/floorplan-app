@@ -6,7 +6,6 @@ import { RoomService } from './services/room.service';
 import { HouseDetailsComponent } from './components/house-details/house-details.component';
 import { MatToolbarModule } from "@angular/material/toolbar"; 
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -26,9 +25,9 @@ export class AppComponent {
 
   constructor(
     private roomService: RoomService,
-    private cdr: ChangeDetectorRef  
+    private cdr: ChangeDetectorRef,
   ) { }
-  
+
   onSvgLoad() {
     const svgElement = (document.getElementById('floorplan') as HTMLObjectElement).contentDocument;
     if (svgElement) {

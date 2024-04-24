@@ -1,7 +1,5 @@
-// room.service.ts
 import { Injectable } from '@angular/core';
 import { Room } from '../interfaces/room.interface';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -72,5 +70,7 @@ export class RoomService {
     return room ?? null;
   }
   
-  
+  getAllRoomPhotos(): string[] {
+    return this.rooms.map(room => room.photos).flat();
+  }
 }

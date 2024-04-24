@@ -4,7 +4,6 @@ import { NgFor, NgIf } from '@angular/common';
 import { RoomDetailComponent } from './components/room-detail/room-detail.component';
 import { RoomService } from './services/room.service';
 import { HouseDetailsComponent } from './components/house-details/house-details.component';
-import { MatToolbarModule } from "@angular/material/toolbar"; 
 
 @Component({
   selector: 'app-root',
@@ -14,7 +13,6 @@ import { MatToolbarModule } from "@angular/material/toolbar";
   imports: [
     NgIf,
     NgFor,
-    MatToolbarModule,
     HouseDetailsComponent,
     RoomDetailComponent
   ]

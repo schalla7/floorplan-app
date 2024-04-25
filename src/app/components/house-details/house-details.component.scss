@@ -1,64 +1,75 @@
 :host {
     display: block; // Make sure the :host fills its container
     width: 100%; // This should stretch the component to the full width of its parent
-    display: grid;
     background-color: #797979;  // Will stretch across the screen at top
     color: white;
-    grid-template-columns: auto auto 1fr;
-}
-
-.house-intro {
-    grid-column: 1;
-    width: 100%; // Full width
-    padding: 20px 0; // Vertical padding
 }
 
     .house-thumbnail {
-        width: 40%;
         border-radius: 8px;
     }
 
-    .house-details {
-        padding-left: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+    
 
 // Big screens:
 @media (min-width: 768px) {
     .house-intro {
-        display: flex;
-        padding-left: 40px;
+        max-height: 13vh;
+        display: grid;
+        grid-template-columns: 100px auto;  
+        align-items: start;
+        padding: 20px 20px;
     }
         .house-thumbnail {
-            width: 300px; // Width of the thumbnail for big screens
+            width: 100%;
         }
+
+        h1,
+        .house-info {
+            grid-column: 2;  /* Positions both the h1 and .house-info in the second column */
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px; /* Adds some space between the thumbnail and the text */
+            padding-top: 0;
+            margin-top: 0;
+            height: auto;
+        }
+            .house-info p {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
 }
 
 // Mobile devices:
 @media (max-width: 768px) {
     .house-intro {
         display: flex;
-        flex-direction: column;
-        align-items: center; // Centers children horizontally
-        margin: 0 0; // Removes any horizontal margin
-        width: 100%; // Ensures the div doesn't exceed the viewport width
+        flex-direction: row;
+        align-items: center; /* Centers thumbnail and title vertically */
+        flex-wrap: wrap;
+        max-height: 30vh;  /* Adjust this value as needed */
+        padding: 30px;
+        padding-bottom: 0px;
     }
 
         .house-thumbnail {
-            border-color: black;
-            margin: auto; // Centers the image
-            max-width: 100%; // Ensures the image is responsive and does not overflow
-            height: auto; // Keeps the aspect ratio of the image
-            border-radius: 8px; // Keeps the border-radius if you want rounded corners
+            flex: 0 0 auto; /* Do not grow, do not shrink, and is automatically sized */
+            width: 25%;/* Adjust the thumbnail size to fit the layout */
+            max-width: 150px; /* Sets a max-width for the thumbnail */
+            margin-right: 10px; /* Provides spacing between the thumbnail and the title */
+            margin-left: 20px;
         }
 
-        .house-details {
-            padding: 10px;
-            width: 100%; // Ensures the div doesn't exceed the viewport width
-            box-sizing: border-box; // Includes padding in the width calculation
-            text-align: center;
+        h1 {
+            flex: 1; /* Allows the title to fill the remaining space next to the thumbnail */
+            margin: 0; /* Removes default margin to align correctly with the thumbnail */
+            font-size: 1.75rem; /* Adjust the font size for mobile */
+            word-break: break-word;  /* Ensures the title wraps and fits within the available space */
         }
-    
+
+    .house-info {
+        display: block;  /* Makes sure the info section is displayed as a block */
+        width: 100%;  /* Takes full width to start on a new line */
+        text-align: center;
+    }
 }

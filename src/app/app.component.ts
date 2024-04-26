@@ -19,7 +19,6 @@ import { HouseDetailsComponent } from './components/house-details/house-details.
 })
 export class AppComponent {
   public selectedRoom: Room | null = null;
-  public selectedRoomName: string | null = null;
 
   constructor(
     private roomService: RoomService,
